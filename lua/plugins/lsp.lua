@@ -1,6 +1,10 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    servers = {
+      -- Ruff and BasedPyright handle Python, exclude pylsp from Mason auto-enable.
+      pylsp = { enabled = false },
+    },
     diagnostics = {
       virtual_text = {
         current_line = false, -- show on ALL lines (set true to only show on cursor line)
